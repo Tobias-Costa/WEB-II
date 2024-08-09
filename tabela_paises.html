@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'medalhas/css/tabela_paises.css' %}">
+    <title>Jogos Olímpicos de Paris 2024</title>
+</head>
+<body>
+    <table>
+        <caption>Quadro de medalhas</caption>
+        <tr>
+            <th colspan="2" class="pais-header">Países</th>
+            <th class="medal">&#129351;</th>
+            <th class="medal">&#129352;</th>
+            <th class="medal">&#129353;</th>
+        </tr>
+        {% for pais in paises %}
+            <tr class="data-row">
+                <td class="position">{{pais.posicao}}</td>
+                <td>
+                    <img src={{pais.img_link}} alt={{pais.nome_pais}}>
+                    <a href="{% url 'atletas_medalhas' pais.nome_pais %}">
+                        <p>{{pais.nome_pais}}</p>
+                    </a>
+                </td>
+                <td>{{pais.ouro}}</td>
+                <td>{{pais.prata}}</td>
+                <td>{{pais.bronze}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+</body>
+</html>
