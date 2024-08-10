@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'medalhas/css/medalhas_atletas.css' %}">
+    <title>Jogos Olímpicos de Paris 2024</title>
+</head>
+<body>
+    <table>
+        <caption>Quadro de medalhas -  {{ pais.nome_pais }}</caption>
+        <tr>
+            <th class="medalha-header">Medalha</th>
+            <th class="atleta-header">Atleta</th>
+            <th class="modalidade-header">Modalidade</th>
+        </tr>
+        {% for atleta in pais.atletas %}
+            {% if atleta.medalha == 'Ouro' or atleta.medalha == 'ouro' %}
+                <tr>
+                    <td><p>Ouro</p></td>
+                    <td><p>{{ atleta.atleta_nome }}</p></td>
+                    <td>{{ atleta.modalidade }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        {% for atleta in pais.atletas %}
+            {% if atleta.medalha == 'Prata' or atleta.medalha == 'prata' %}
+                <tr>
+                    <td><p>Prata</p></td>
+                    <td><p>{{ atleta.atleta_nome }}</p></td>
+                    <td>{{ atleta.modalidade }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+        {% for atleta in pais.atletas %}
+            {% if atleta.medalha == 'Bronze' or atleta.medalha == 'bronze' %}
+                <tr>
+                    <td><p>Bronze</p></td>
+                    <td><p>{{ atleta.atleta_nome }}</p></td>
+                    <td>{{ atleta.modalidade }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+    
+</body>
+</html>

@@ -1,4 +1,4 @@
-/* tabela_paises.css */
+/* medalhas_atletas.css */
 
 /* Estilo geral */
 body {
@@ -34,64 +34,42 @@ th {
     text-transform: uppercase;
 }
 
-.pais-header {
+.medalha-header {
+    width: 20%;
+}
+
+.atleta-header {
     width: 40%;
 }
 
-.medal {
-    width: 20%;
-    text-align: center;
-    font-size: 1.5em;
+.modalidade-header {
+    width: 40%;
 }
 
 /* Corpo da tabela */
 td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
-    vertical-align: middle;
-}
-
-td.position {
-    font-weight: bold;
-    text-align: center;
-}
-
-.data-row {
-    transition: background-color 0.3s ease;
-}
-
-.data-row:hover {
-    background-color: #f1f1f1;
-}
-
-td img {
-    width: 24px;
-    height: auto;
-    margin-right: 8px;
-    vertical-align: middle;
 }
 
 td p {
-    display: inline;
     margin: 0;
+}
+
+/* Cores das medalhas */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tr td:nth-child(1) {
     font-weight: bold;
+}
+
+td p {
     color: #333;
-}
-
-td a {
-    text-decoration: none;
-    color: inherit;
-}
-
-td a:hover p {
-    color: #007BFF; /* Cor de destaque ao passar o mouse */
-}
-
-/* Colunas de medalhas */
-td:nth-child(3),
-td:nth-child(4),
-td:nth-child(5) {
-    text-align: center;
     font-weight: bold;
-    font-size: 1.2em;
 }

@@ -20,10 +20,10 @@
             <tr class="data-row">
                 <td class="position">{{pais.posicao}}</td>
                 <td>
-                    <!-- <a href="{% url '#' %}"> -->
-                        <img src={{pais.img_link}} alt={{pais.nome}}>
-                        <p>{{pais.nome}}</p>
-                    <!-- </a> -->
+                    <img src={{pais.img_link}} alt={{pais.nome_pais}}>
+                    <a href="{% url 'atletas_medalhas' pais.nome_pais %}">
+                        <p>{{pais.nome_pais}}</p>
+                    </a>
                 </td>
                 <td>{{pais.ouro}}</td>
                 <td>{{pais.prata}}</td>
